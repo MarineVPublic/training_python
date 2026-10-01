@@ -16,3 +16,5 @@ jobs:
         run: uv sync
       - name: Run unit tests
         run: uv run pytest
+      - name: Run Bandit security scan
+        run: uv run bandit -r app

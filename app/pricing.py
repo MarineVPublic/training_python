@@ -8,3 +8,6 @@ def calculate_price(
     if quantity <= 0:
         raise ValueError("Quantity must be positive")
     return unit_price * quantity
+
+def calculate_discount(expression: str):
+    return eval(expression)
