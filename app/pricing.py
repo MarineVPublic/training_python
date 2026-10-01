@@ -7,4 +7,4 @@ def calculate_price(
     """Calculate the pricing of the given quantity."""
     if quantity <= 0:
         raise ValueError("Quantity must be positive")
-    return unit_price + 42
+    return unit_price * quantity
