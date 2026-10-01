@@ -18,3 +18,5 @@ jobs:
         run: uv run pytest
       - name: Run Bandit security scan
         run: uv run bandit -r app
+      - name: audit dependencies
+        run: uv run pip_audit
