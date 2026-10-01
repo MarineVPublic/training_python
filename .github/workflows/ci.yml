@@ -39,3 +39,13 @@ jobs:
           docker ps -a
           docker logs cicd-demo || true
           exit 1
+      - name: Scan Docker image with Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: cicd-demo
+          format: table
+          exit-code: '1'
+          ignore-unfixed: true
+          severity: CRITICAL,HIGH
+      - name: Start Docker container
+        run: docker run -d --name cicd-demo -p 8000:8000 cicd-demo
