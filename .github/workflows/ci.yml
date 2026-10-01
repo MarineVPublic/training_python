@@ -19,4 +19,4 @@ jobs:
       - name: Run Bandit security scan
         run: uv run bandit -r app
       - name: audit dependencies
-        run: uv run pip_audit
+        run: uv run pip-audit
